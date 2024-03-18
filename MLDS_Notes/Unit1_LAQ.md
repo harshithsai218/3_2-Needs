@@ -87,3 +87,48 @@ To establish causation, you'd need to conduct experiments. For instance, you cou
 
 - Correlation: Visualized through scatterplots, indicating the relationship between variables.
 - Causation: Established through experiments, demonstrating a cause-and-effect relationship.
+
+
+# Bayes' Theorem
+
+Baye's theorem states that the probability of an event occurring given that another event has occurred is equal to the product of the probabilities of both events occurring. It is expressed mathematically as:
+
+$P(A | B) = \frac{P(A \cap B)}{P(B)}$
+
+i.e.,
+
+$P(A | B) = \frac{P(A) \cdot P(B | A)}{P(B)}$
+
+- An event $B$ can be explained by a set of exhaustive and mutually exclusive hypotheses $A_1, A_2, \ldots, A_n$.  - Given 'a priori' probabilities $P(A_1), P(A_2), \ldots, P(A_n)$ corresponding to a total absence of knowledge regarding the occurrence of $B$
+- And conditional probabilities $P(B \vert A_1), P(B \vert A_2), \ldots, P(B \vert A_n)$, the 'a posteriori' probability $P(A_j \vert B)$ of some event $A_j$ is given by:
+
+$P(A_j \vert B) = \frac{P(A_j) \cdot P(B \vert A_j)}{\sum_{i=1}^{n} P(A_i) \cdot P(B \vert A_i)}$
+
+This formula calculates the probability of event $A_j$ given that event $B$ has occurred, based on the prior probabilities of each hypothesis $A_i$ and their corresponding conditional probabilities of $B$ given $A_i$.
+
+Here's what each component represents:
+
+- $P(A_j | B)$: This is the probability of hypothesis $A_j$ being true given that event $B$ has occurred. It's called the posterior probability.
+  
+- $P(A_j)$: This is the prior probability of hypothesis $A_j$ being true before observing any evidence.
+  
+- $P(B | A_j)$: This is the probability of observing event $B$ given that hypothesis $A_j$ is true. It's called the likelihood.
+  
+- $\sum_{i=1}^{n} P(A_i) \cdot P(B | A_i)$: This term represents the total probability of observing event $B$ over all possible hypotheses $A_1, A_2, \ldots, A_n$. It's calculated by summing the product of the prior probability of each hypothesis and the probability of observing event $B$ given that hypothesis.
+
+**Interpretation:**
+
+Bayes' theorem helps us figure out what's more likely, based on new information. We start with beliefs about different things, and then use the likelihood of new evidence to update them. The result is our new beliefs, which are more likely now.
+
+**Example:**
+
+Let's say we have a medical test for a disease, and we want to know the probability that a patient has the disease given that the test result is positive. Here:
+- $A_j$ represents the hypothesis that the patient has the disease.
+- $B$ represents the event of getting a positive test result.
+- $P(A_j)$ is the prior probability of having the disease.
+- $P(B | A_j)$ is the probability of getting a positive test result if the patient has the disease.
+- $P(B)$ is the total probability of getting a positive test result.
+
+We can use Bayes' theorem to calculate the posterior probability of having the disease given the positive test result, updating our prior belief based on the test outcome.
+
+Overall, Bayes' theorem is a powerful tool for updating beliefs in the face of uncertainty and is widely used in various fields such as medicine, engineering, and machine learning.
