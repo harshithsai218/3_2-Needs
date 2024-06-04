@@ -349,75 +349,78 @@ plt.show
 Write a program to predict the winner in IPL matches.
 
 ```py
-
 import pandas as pd
-import matplotlib.pyplot as plt
+import numpy as np
 import seaborn as sns
 sns.set_style("whitegrid")
-import numpy as np
+import matplotlib.pyplot as plt
 import sklearn
 
-im=pd.read_csv("matches.csv")
-im
+data = pd.read_csv("matches.csv")
+data.head()
 
-im.info()
+data.describe()
 
-im.describe()
+data.isnull().sum()
 
-im.columns
-
-for col in im.columns:
-  print(im[col].unique())
-
-im.isnull().sum()
-
-data=im.iloc[:,:-1]
+data = data.iloc[:,:-1]
 data.dropna(inplace=True)
 
-im['team1'].unique()
+data["team1"].unique()
 
-im['team1']=im['team1'].str.replace('Delhi Daredevils','Delhi Capitals')
-im['team2']=im['team2'].str.replace('Delhi Daredevils','Delhi Capitals')
-im['winner']=im['winner'].str.replace('Delhi Daredevils','Delhi Capitals')
-#for sunrisers Hyderabad
-im['team1']=im['team1'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
-im['team2']=im['team2'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
-im['winner']=im['winner'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
+data["team1"] = data["team1"].str.replace('Delhi Daredevils', 'Delhi Capitals')
+data["team2"] = data["team2"].str.replace('Delhi Daredevils', 'Delhi Capitals')
+data["winner"] = data["winner"].str.replace('Delhi Daredevils', 'Delhi Capitals')
+data["team1"] = data["team1"].str.replace('Deccan Chargers', 'Sunrisers Hyderabad')
+data["team2"] = data["team2"].str.replace('Deccan Chargers', 'Sunrisers Hyderabad')
+data["winner"] = data["winner"].str.replace('Deccan Chargers', 'Sunrisers Hyderabad')
 
 plt.figure(figsize=(10,6))
-sns.countplot(x="toss_decision",data=im)
-plt.xlabel('Toss Decision',fontsize=12)
-plt.ylabel('Count',fontsize=12)
-plt.title('Toss decision')
+sns.countplot(y = "winner", data = data, order = data['winner'].value_counts().index, color = "pink")
+plt.xlabel('Wins')
+plt.ylabel('Team')
+plt.title("The number of IPL matches won by each team")
 
-x=['city','toss_decision','result','dl_applied']
+plt.figure(figsize=(10,6))
+sns.countplot(y = "venue", data = data, order = data["venue"].value_counts().iloc[:10].index, color = "pink")
+plt.xlabel("No of matches", fontsize = 12)
+plt.ylabel("Venue", fontsize = 12)
+plt.title("Total number of matches played in different stadium")
+
+plt.figure(figsize=(10,6))
+sns.countplot(x = "toss_decision", data = data, color = "pink")
+plt.xlabel("Toss Decision", fontsize = 12)
+plt.ylabel("Count", fontsize = 12)
+plt.title("Toss Decision")
+
+x = ["city", "toss_decision", "result", "dl_applied"]
 for i in x:
-  print("----------------")
-  print(im[i].unique())
-  print(im[i].value_counts())
+    print("-----------")
+    print(data[i].unique())
+    print(data[i].value_counts())
 
-data.drop(["id","season","city","date","player_of_match","umpire1","venue","umpire2"],axis=1,inplace=True)
+data.drop(["id", "season", "city", "date", "player_of_match", "umpire1", "venue", "umpire2"], axis = 1, inplace = True)
 
-x=data.drop(["winner"],axis=1)
-y=data["winner"]
+x = data.drop(["winner"], axis = 1)
+y = data["winner"]
 
-x=pd.get_dummies(x,["team1","team2","toss_winner","toss_decision","result"],drop_first=True)
+X = pd.get_dummies(x, ["team1", "team2", "toss_winner", "toss_decision", "result"], drop_first=True)
 
 from sklearn.preprocessing import LabelEncoder
-le= LabelEncoder()
-y=le.fit_transform(y)
+le = LabelEncoder()
+y = le.fit_transform(y)
 
 from sklearn.model_selection import train_test_split
-x_train,y_train,x_test,y_test=train_test_split(x,y,train_size=0.8)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.8)
 
 from sklearn.ensemble import RandomForestClassifier
-model=RandomForestClassifier()
+model = RandomForestClassifier()
 
-model.fit(x_train,y_train)
+model.fit(x_train, y_train)
 
-y_pred=model.predict(x_test)
+y_pred = model.predict(x_test)
 
 from sklearn.metrics import accuracy_score
-ac =accuracy_score(y_pred,y_test)
+ac = accuracy_score(y_pred, y_test)
 ac
 ```
