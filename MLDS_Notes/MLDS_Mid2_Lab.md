@@ -2,6 +2,8 @@
 
 Implementing Backpropagation algorithm and test the same using appropriate datasets
 
+The backpropagation algorithm is a supervised learning technique used in artificial neural networks to optimize weights. It involves two main steps: forward propagation and backward propagation. In forward propagation, inputs are passed through the network to generate an output. The output is then compared to the target value, and an error is calculated. During backward propagation, this error is propagated back through the network, adjusting the weights by gradient descent to minimize the error. This process iteratively updates the weights to improve the network's performance. Backpropagation is essential for training deep learning models effectively.
+
 
 ```py
 import numpy as np
@@ -54,11 +56,12 @@ for i in range(epoch):
     hiddengrad = derivatives_sigmoid(hlayer_act)
     d_hiddenlayer=EH*hiddengrad
 
+    # Adjusting weights
+    wout+=hlayer_act.T.dot(d_output)*lr
+    bout+=np.sum(d_output,axis=0,keepdims=True)*lr
+    wh+=x.T.dot(d_hiddenlayer)*lr
+    bh+=np.sum(d_hiddenlayer,axis=0,keepdims=True)*lr
 
-wout+=hlayer_act.T.dot(d_output)*lr
-bout+=np.sum(d_output,axis=0,keepdims=True)*lr
-wh+=x.T.dot(d_hiddenlayer)*lr
-bh+=np.sum(d_hiddenlayer,axis=0,keepdims=True)*lr
 print("-----------Epoch-",i+1,"Starts-----------")
 print("Input:\n"+str(x))
 print("Actual output:\n"+str(y))
