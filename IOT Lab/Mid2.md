@@ -322,3 +322,65 @@ void loop(){
     }
 }
 ```
+
+
+# Week 10
+
+```cpp
+#include <ESP8266WiFi.h> 
+#include <WiFiUDP.h> 
+#include <DHT.h>
+
+#define DHTTYPE DHT22 // Specify type of DHT sensor
+
+#define WIFI_SSID "YOUR_SSID"
+#define WIFI_PASSWORD "YOUR_PASSWORD"
+#define UDP_PORT 4210
+
+DHT dht(D3, DHTTYPE); // Initialize DHT sensor, also acn be directly set like: DHT dht(D3, DHT22);
+
+WiFiUDP UDP; // Initialize UDP object
+char packet[255]; // Buffer for incoming UDP packets
+char reply[] = "Packet received"; // Reply message for UDP packets
+
+void setup() {
+    Serial.begin(115200);
+    Serial.println();
+    Serial.println("DHTxx test!");
+    
+    dht.begin(); // Start DHT sensor
+
+    // Connect to WiFi network
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(2000);
+        Serial.print(".");
+    }
+    Serial.println();
+    Serial.println("WiFi connected");
+    Serial.println("IP address: ");
+    Serial.println(WiFi.localIP());
+
+    // Start UDP server
+    UDP.begin(UDP_PORT);
+
+    Serial.println("Listening on UDP port " + String(UDP_PORT));
+}
+
+void loop() {
+    // Read humidity from DHT sensor
+    int h = dht.readHumidity();
+    delay(2000);
+
+    // Send reply message for UDP packet
+    UDP.beginPacket(UDP.remoteIP(), UDP.remotePort());
+    UDP.write(reply);
+    UDP.print("Humidity: ");
+    UDP.println(h);
+    UDP.endPacket();
+
+    // Print humidity value to serial monitor
+    Serial.println("Humidity: " + String(h));
+    delay(2000);
+}
+```
