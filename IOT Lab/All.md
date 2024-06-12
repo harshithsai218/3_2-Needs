@@ -290,9 +290,9 @@ void loop() {
   Serial.print("°C ");
   Serial.print(f);
   Serial.print("°F Heat Index (F): ");
-  Serial.print(hif);
-  Serial.print("°C");
   Serial.print(hic);
+  Serial.print("°C");
+  Serial.print(hif);
   Serial.println("°F");
 
   // Wait for 2 seconds before reading again
