@@ -184,6 +184,61 @@ void loop() {
 
 # Week 8
 
-```c
+```cpp
+#include "Thingspeak.h"
+#include <ESP8266WiFi.h>
 
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
+
+int statusCode = 0;
+WifiCLient client;
+
+unisgned long counterChannelNumber = YOUR_CHANNEL_NUMBER;
+const char * counterWriteAPIKey = "YOUR_WRITE_API_KEY";
+
+const int fieldNumber1 = 1;
+const int fieldNumber2 = 2;
+
+void setup(){
+    Serial.begin(115200);
+    WiFi.mode(WIFI_STA);
+    ThingSpeak.begin(client);
+}
+
+void loop(){
+    if(WiFi.status() != WL_CONNECTED){
+        Serial.print("Attempting to connect to SSID: ");
+        Serial.println(ssid);
+        while(WiFi.status() != WL_CONNECTED){
+            WiFi.begin(ssid, password);
+            delay(5000);
+        }
+        Serial.println("\nConnected.");
+    }
+
+    long temp = ThingSpeak.readLongField(counterChannelNumber, fieldNumber1, counterWriteAPIKey);
+    ststusCode = ThingSpeak.getLastReadStatus();
+    if(statusCode == 200){
+        Serial.print("Field 1: ");
+        Serial.println(temp);
+    }
+    else{
+        Serial.println("Problem reading channel. HTTP error code " + String(statusCode));
+    }
+
+    delay(1000);
+
+    long humidity = ThingSpeak.readLongField(counterChannelNumber, fieldNumber2, counterWriteAPIKey);
+    ststusCode = ThingSpeak.getLastReadStatus();
+    if(statusCode == 200){
+        Serial.print("Field 2: ");
+        Serial.println(humidity);
+    }
+    else{
+        Serial.println("Problem reading channel. HTTP error code " + String(statusCode));
+    }
+
+    delay(1000);
+}
 ```
