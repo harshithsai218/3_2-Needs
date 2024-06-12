@@ -185,28 +185,31 @@ void loop() {
 # Week 8
 
 ```cpp
-#include "Thingspeak.h"
-#include <ESP8266WiFi.h>
+#include "ThingSpeak.h"  // Library for connecting to ThingSpeak
+#include <ESP8266WiFi.h> // Library for WiFi connectivity on ESP8266
 
-const char* ssid = "YOUR_SSID";
-const char* password = "YOUR_PASSWORD";
+// WiFi credentials
+const char* ssid = "YOUR_SSID"; // Your WiFi network SSID
+const char* password = "YOUR_PASSWORD"; // Your WiFi network password
 
-int statusCode = 0;
-WifiCLient client;
+int statusCode = 0; // Variable to store HTTP status code
+WiFiClient client; // WiFi client for connecting to ThingSpeak
 
-unisgned long counterChannelNumber = YOUR_CHANNEL_NUMBER;
-const char * counterWriteAPIKey = "YOUR_WRITE_API_KEY";
+// ThingSpeak channel details
+unsigned long counterChannelNumber = YOUR_CHANNEL_NUMBER; // Your ThingSpeak channel number
+const char * counterWriteAPIKey = "YOUR_WRITE_API_KEY"; // Your ThingSpeak write API key
 
-const int fieldNumber1 = 1;
-const int fieldNumber2 = 2;
+const int fieldNumber1 = 1; // Field number for temperature data
+const int fieldNumber2 = 2; // Field number for humidity data
 
 void setup(){
-    Serial.begin(115200);
-    WiFi.mode(WIFI_STA);
-    ThingSpeak.begin(client);
+    Serial.begin(115200); // Initialize serial communication for debugging
+    WiFi.mode(WIFI_STA); // Set WiFi mode to station mode
+    ThingSpeak.begin(client); // Initialize ThingSpeak client
 }
 
 void loop(){
+    // Check WiFi connection and reconnect if necessary
     if(WiFi.status() != WL_CONNECTED){
         Serial.print("Attempting to connect to SSID: ");
         Serial.println(ssid);
@@ -217,9 +220,10 @@ void loop(){
         Serial.println("\nConnected.");
     }
 
+    // Read temperature data from ThingSpeak channel
     long temp = ThingSpeak.readLongField(counterChannelNumber, fieldNumber1, counterWriteAPIKey);
-    ststusCode = ThingSpeak.getLastReadStatus();
-    if(statusCode == 200){
+    statusCode = ThingSpeak.getLastReadStatus(); // Get HTTP status code
+    if(statusCode == 200){ // Check if reading was successful
         Serial.print("Field 1: ");
         Serial.println(temp);
     }
@@ -229,9 +233,10 @@ void loop(){
 
     delay(1000);
 
+    // Read humidity data from ThingSpeak channel
     long humidity = ThingSpeak.readLongField(counterChannelNumber, fieldNumber2, counterWriteAPIKey);
-    ststusCode = ThingSpeak.getLastReadStatus();
-    if(statusCode == 200){
+    statusCode = ThingSpeak.getLastReadStatus(); // Get HTTP status code
+    if(statusCode == 200){ // Check if reading was successful
         Serial.print("Field 2: ");
         Serial.println(humidity);
     }
@@ -240,5 +245,80 @@ void loop(){
     }
 
     delay(1000);
+}
+```
+
+# Week 9
+
+```cpp
+// Include the necessary libraries
+#include "ESP8266WiFi.h"
+#include "DHT.h"
+
+// Define the WiFi credentials
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
+
+// Create a WiFi server object on port 8080
+WiFiServer wifiServer(8080);
+
+// Create a DHT sensor object on pin D3 and specify the sensor type
+DHT dht(D3, DHT22);
+
+void setup(){
+    // Start the serial communication
+    Serial.begin(115200);
+    delay(1000);
+    
+    // Connect to WiFi
+    WiFi.begin(ssid, password);
+    // Wait for the connection to be established
+    while(WiFi.status() != WL_CONNECTED){
+        delay(1000);
+        Serial.println("Connecting to WiFi...");
+    }
+    // Print a message when connected to WiFi
+    Serial.println("Connected to WiFi.");
+
+    // Start the WiFi server
+    Serial.println("Starting TCP server...");
+    wifiServer.begin();
+    // Print a message when the server is started
+    Serial.println("TCP server started.");
+    
+    // Initialize the DHT sensor
+    dht.begin();
+}
+
+void loop(){
+    // Check if a client is connected
+    WiFiClient client = wifiServer.available();
+    if(client){
+        // Keep the client connected as long as it remains connected
+        while(client.connected()){
+            // Check if there is data available from the client
+            while(client.available() > 0){
+                // Read the temperature and humidity from the DHT sensor
+                float t = dht.readTemperature();
+                float h = dht.readHumidity();
+                
+                // Send the humidity data to the client
+                client.print("Humidity: ");
+                client.println(h);
+                Serial.println(h);
+                
+                // Send the temperature data to the client
+                client.print("Temperature: ");
+                client.println(t);
+                Serial.println(t);
+                
+                // Delay for 2 seconds before reading the sensor again
+                delay(2000);
+            }
+        }
+        // Disconnect the client when it is no longer connected
+        client.stop();
+        Serial.println("Client disconnected.");
+    }
 }
 ```
