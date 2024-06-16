@@ -131,11 +131,9 @@ plt.boxplot(temperature)
 
 # NumPy
 
-### Detailed Discussion on NumPy
-
 **NumPy** is a powerful Python library essential for numerical computing. It provides support for large multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
 
-#### Key Features of NumPy
+## Key Features of NumPy
 
 1. **N-Dimensional Array Object (ndarray)**
    - The core of NumPy is its ndarray, an n-dimensional array of homogeneous data types, which provides fast and efficient operations.
@@ -155,13 +153,13 @@ plt.boxplot(temperature)
 6. **Integration with Other Libraries**
    - NumPy serves as the foundation for many other scientific libraries, such as SciPy, pandas, and Matplotlib, enhancing its functionality and usability.
 
-#### Installation
+## Installation
 You can install NumPy using pip:
 ```sh
 pip install numpy
 ```
 
-#### Basic Examples of Using NumPy
+## Basic Examples of Using NumPy
 
 **Creating Arrays**
 ```python
@@ -273,6 +271,75 @@ print("Element at (1,2):", arr2[1, 2])
 3. **Scientific Computing**: NumPy's support for complex mathematical operations makes it indispensable for researchers and scientists.
 4. **Image Processing**: Images can be represented as NumPy arrays for processing and manipulation.
 
-### Conclusion
 
-NumPy is a fundamental library for anyone working in data science, machine learning, or any field that requires numerical computations. Its efficient operations on large arrays and matrices, along with its extensive collection of mathematical functions, make it a cornerstone of the scientific Python ecosystem.
+# Dimensionality Reduction
+
+## What is Dimentionality?
+
+**Dimensionality** refers to the number of features or variables in a dataset. High-dimensional data has many features, which can lead to challenges in analysis and interpretation. The more features in a dataset, the more complex the analysis will be. Hence, we need to reduce the dimensionality of the data to make it easier to analyze and interpret. 
+
+## The curse of dimensionality
+
+- Handling the high-dimensional data is very difficult in practice, commonly known as the curse of dimensionality. 
+- If the dimensionality of the input dataset increases, any machine learning algorithm and model becomes more complex.
+- As the number of features increases, the number of samples also gets increased proportionally, and the chance of overfitting also increases.
+- If the machine learning model is trained on high-dimensional data, it becomes overfitted and results in poor performance.
+- Hence, it is often required to reduce the number of features, which can be done with dimensionality reduction.
+
+## Approaches to Dimensionality Reduction
+
+Dimension reduction techniques like feature selection and feature extraction are crucial in data preprocessing to reduce the complexity of datasets while retaining relevant information. Here’s an overview of both approaches:
+
+
+### Feature Selection
+
+Feature selection involves choosing a subset of the most relevant features from the original dataset. This process helps in improving model accuracy, reducing training time, and avoiding overfitting. There are three main methods for feature selection:
+
+1. **Filter method**: 
+    In this method, the dataset is filtered, and a subset that contains only the relevant features is taken. Some common techniques of filters method are:
+
+    - Correlation
+    - Chi-Square test
+    - ANOVA
+    - Information gain, etc.
+
+2. **Wrapper method**:
+    The wrapper method has the same goal as the filter method, but it takes a machine learning model for its evaluation. In this method, some features are fed to the ML model, and evaluate the performance. The performance decides whether to add those features or remove to increase the accuracy of the model. This method is more accurate than the filtering method but complex to work. Some common techniques of wrapper methods are:
+
+    - Forward Selection
+    - Backward Selection
+    - Bi-directional Elimination
+
+3. **Embedded method**:
+    Embedded methods check the different training iterations of the machine learning model and evaluate the importance of each feature. Some common techniques of Embedded methods are:
+
+    - LASSO
+    - Elastic Net
+    - Ridge Regression, etc.
+
+### Feature Extraction
+
+Feature extraction involves transforming the original features into a lower-dimensional space. This process is useful when the original features are highly correlated or when the dataset has a large number of features. Some common techniques for feature extraction are:
+
+- Principal Component Analysis
+- Linear Discriminant Analysis
+- Kernel PCA
+- Quadratic Discriminant Analysis, etc.
+
+<details>
+<summary> Common Techniques of Dimensionality Reduction </summary>  
+
+a. Principal Component Analysis (PCA)  
+b. Backward Elimination  
+c. Forward Selection  
+d. Score Comparison  
+e. Missing Value Ratio  
+f. Low Variance Filter  
+g. High Correlation Filter  
+h. Random Forest  
+i. Factor Analysis  
+j. Auto-Encoder  
+
+</details>
+
+
