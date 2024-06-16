@@ -343,3 +343,43 @@ j. Auto-Encoder
 </details>
 
 
+
+
+# NLTK
+
+NLTK (Natural Language Toolkit) is a powerful tool for natural language processing written in Python, designed to help computers understand and interpret human language as it is spoken. It serves as an aid in enabling computers to comprehend and manipulate textual data efficiently.
+
+### Key Features of NLTK:
+
+1. **Installation**:
+   - NLTK can be installed on Windows using the command `pip3 install nltk`. Once installed, additional datasets (corpora) need to be downloaded for full functionality.
+
+2. **Tokenization**:
+   - Tokenization is the process of breaking down a text into individual words. NLTK provides various tokenization methods, such as word tokenization and sentence tokenization.
+   - **Example**: Using `word_tokenize` from `nltk.tokenize`, sentences can be broken into individual words:
+     ```python
+     from nltk.tokenize import word_tokenize
+     word_tokenize('Tutorialspoint.com provides high quality technical tutorials for free.')
+     ```
+     Output: `['Tutorialspoint.com', 'provides', 'high', 'quality', 'technical', 'tutorials', 'for', 'free', '.']`
+
+3. **Stemming**:
+   - Stemming is the process of reducing inflected or derived words to their root form. Performing this process will help in reducing the number of words in a sentence or reducing the vocabulary.
+   - **Example**: NLTK includes the `PorterStemmer` class for implementing the Porter Stemming algorithm:
+     ```python
+     from nltk.stem import PorterStemmer
+     word_stemmer = PorterStemmer()
+     word_stemmer.stem('writing')
+     ```
+     Output: `'write'`
+
+4. **Part-of-Speech (POS) Tagging**:  
+   - Parts-of-speech tagging is the process of assigning a part-of-speech (POS) tag to each word in a sentence. Thsi method is useful in determining the grammatical structure of a sentence.
+   - **Example**: NLTK can automatically tag words in sentences:
+     ```python
+     import nltk
+     from nltk import pos_tag, word_tokenize
+     nltk.download('averaged_perceptron_tagger')
+     pos_tag(word_tokenize('NLTK is a powerful tool for natural language processing.'))
+     ```
+     Output: `[('NLTK', 'NNP'), ('is', 'VBZ'), ('a', 'DT'), ('powerful', 'JJ'), ('tool', 'NN'), ('for', 'IN'), ('natural', 'JJ'), ('language', 'NN'), ('processing', 'NN'), ('.', '.')]`
