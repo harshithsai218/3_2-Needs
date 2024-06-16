@@ -60,4 +60,162 @@ Bootstrap offers extensive documentation and examples to help developers get sta
 | **Semantic Markup**    | Relies on `<div>` and `<span>` for structuring content. | Encourages the use of semantic elements like `<header>`, `<nav>`, `<footer>`, `<article>`, `<section>`, etc., for better accessibility and SEO. |
 | **Browser Support**    | Supported by older and modern browsers.  | Requires modern browser support for full compatibility due to the introduction of new features and APIs. |
 
-HTML5 represents a significant evolution of the HTML language, introducing new features, APIs, and semantic elements that enhance the capabilities of web development and improve the user experience across various devices and
+# CSS Position Properties
+
+CSS position properties are used to control the position of an element within a container. They can be used to position elements relative to other elements or to control the layout of the page. The main CSS position properties are:
+
+| Property | Description |
+| -------- | ----------- |
+| `static` | The element is not positioned in any special way; it is flush with other elements in the HTML flow. |
+| `relative` | The element is positioned relative to its normal position. |
+| `absolute` | The element is positioned relative to the browser window. |
+| `fixed` | The element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. |
+| `sticky` | The element is positioned relative to the nearest positioned ancestor. |
+
+By using these position properties along with other CSS properties like `top`, `right`, `bottom`, and `left`, developers can create complex layouts and designs that respond to user interactions and viewport changes. Understanding how these position properties work is essential for building responsive and visually appealing web pages.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positioning Example</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #f1f1f1;
+        }
+
+        .element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="element"></div>
+    </div>
+</body>
+</html>
+```
+
+![](img/2024-06-16-22-37-41.png)
+
+In the example above, the `.container` element is positioned relative to the browser window, while the `.element` is positioned absolutely within the container. The `top: 50%` and `left: 50%` properties center the `.element` within the `.container`, and the `transform: translate(-50%, -50%)` property adjusts the element's position to center it precisely.
+
+
+# Web Storage
+
+Web storage is a client-side storage mechanism that allows web applications to store data locally on the user's device. It provides a way to persist data across sessions and browser refreshes without relying on server-side storage solutions like cookies or databases.
+
+The Web Storage is one of the great features of HTML5. With the Web Storage feature, web applications can locally store data within the browser on the client side. It stores data in the form of key/value pairs on the browser. Web Storage is sometimes also known as DOM storage.
+
+Storing data with the help of web storage is similar to cookies, but it is better and faster than cookies storage. In comparison to cookies, Web Storage has the following advantages:
+
+- Web Storage can use storage space up to 5MB per domain. (The browser software may prompt the user if the space limit is reached.)
+- It will not send data to the server side, hence it is faster than cookies storage.
+- The data stored by local storage never expires, but cookies data expires after some time or session.
+- Web Storage is more secure than cookies.
+
+The following are the key features of web storage:
+
+| Feature | Description |
+| ------- | ----------- |
+| Local storage | Stores data in the browser's local storage. |
+| Session storage | Stores data in the browser's session storage. |
+| IndexedDB | Stores data in an indexed database. |
+| WebSQL | Stores data in a web-based SQL database. |
+| Cookies | Stores data in the browser's cookies. |
+
+Web storage is widely used in web development for various purposes, such as caching data, storing user preferences, and implementing offline functionality. By leveraging web storage, developers can enhance the user experience, improve performance, and reduce server-side dependencies in their web applications.
+
+There are two types of web storage: Local storage and session storage.
+
+1. **Local Storage**: The data stored in local storage will not be deleted even after the browser is closed. The data will be stored until the user manually deletes it. The data stored in local storage will be available across all browser sessions. Meaning, the data will remain even after the user closes the browser.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage Example</title>
+    <script>
+        if(localStorage.getItem('hits') === null) {
+            localStorage.setItem('hits', 1);
+        } else {
+            let hits = parseInt(localStorage.getItem('hits'));
+            hits++;
+            localStorage.setItem('hits', hits);
+        }
+        document.write('You have visited this page ' + localStorage.getItem('hits') + ' times.');
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
+
+![](img/2024-06-16-22-46-36.png)
+
+2. **Session Storage**: The data stored in session storage will be deleted once the browser is closed. The data stored in session storage will be available only for the current browser session. Meaning, the data will be deleted when the user closes the browser.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Storage Example</title>
+    <script>
+        sessionStorage.setItem('page', 1);
+        let page = sessionStorage.getItem('page');
+        document.write('You have visited this page ' + page + ' times.');
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
+
+![](img/2024-06-16-22-47-15.png)
+
+
+
+# Code for Audio & Video
+
+HTML5 introduced native support for embedding audio and video content directly into web pages using the `<audio>` and `<video>` elements. These elements allow developers to include media files in various formats, such as MP3, OGG, WAV, and MP4, without the need for third-party plugins like Flash.
+
+Here is an example of how to embed audio and video content using HTML5:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio and Video Example</title>
+</head>
+<body>
+    <h1>Audio and Video Example</h1>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br>
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+</body>
+</html>
+```
+
+![](img/2024-06-16-22-49-01.png)
