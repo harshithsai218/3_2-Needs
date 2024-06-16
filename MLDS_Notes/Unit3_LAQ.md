@@ -108,3 +108,54 @@ Below is an example of a 3-layers neural network (we don’t count input layer):
 ![](img/2024-03-19-06-47-34.png)
 
 Neural networks excel at tasks like image recognition, where they can build hierarchical representations of images. Starting with simple features like edges, they gradually learn more complex features like facial features and object identities.
+
+
+# Deep Learning
+
+Deep learning is a specialized branch of machine learning that relies on artificial neural networks, which are inspired by the structure and function of the human brain. At its core, deep learning aims to model complex patterns in data by using multiple layers of processing.
+
+![](img/2024-06-16-16-58-15.png)
+
+Deep learning has become a cornerstone of modern AI, enabling breakthroughs in various fields such as computer vision, natural language processing, and more.
+
+![](img/2024-06-16-16-59-04.png)
+
+#### Key Concepts in Deep Learning
+
+1. **Artificial Neural Networks (ANNs)**:  
+   Artificial Neural Networks (ANNs) are the building blocks of deep learning. These networks consist of interconnected nodes, or neurons, organized into layers:
+
+    - An input layer
+    - one or more hidden layers
+    - and an output layer 
+
+    Each neuron processes input and passes it through an activation function, such as ReLU (Rectified Linear Unit), Sigmoid, or Tanh, introducing non-linearity and enabling the network to learn intricate patterns.
+
+2. **Deep Neural Networks (DNNs)**:  
+   Deep Neural Networks (DNNs) is a type of generative neural network that is trained using unsupervised learning. They consist of multiple layers, with each layer processing input and forwarding output to the next layer. DNNs are used for tasks like image recognition, speech recognition, and natural language processing.
+
+   The primary difference between DNNs and ANN is that DNNs use non-linearity to model complex relationships between inputs and outputs.
+
+3. **Popular Deep Learning Architectures**:  
+    * **Convolutional Neural Networks (CNNs)**: Primarily used for image processing tasks. They use convolutional layers to detect spatial hierarchies in images.
+    * **Recurrent Neural Networks (RNNs)**: Suitable for sequential data, such as time series or natural language. They maintain a memory of previous inputs, which influences current output.
+    * **Long-Short-Term Memory Networks (LSTM)**: Suitable for sequential data, such as time series or natural language.
+    * **Deep Belief Networks (DBNs)**: A type of generative neural network that is trained using unsupervised learning.
+    * **Generative Adversarial Networks (GANs)**: A type of generative neural network that is trained using unsupervised learning.
+    * **Back Propagation and Stochastic Gradient Descent**: Techniques used for training neural networks by adjusting weights to minimize the error.
+
+
+4. **Neural Network Properties**:
+   - **Learning from Examples**: Both supervised (with labeled data) and unsupervised (without labeled data).
+   - **Adaptivity**: Ability to adjust connection strengths based on learning.
+   - **Non-linearity**: Essential for modeling complex relationships.
+   - **Fault Tolerance**: Networks can continue functioning even if some neurons or connections are damaged.
+
+5. **Working of Deep Learning**:
+   - **Training Process**: Involves forward propagation of inputs through the network and back-propagation to adjust weights.
+   - **Hierarchy of Layers**: Input layer receives data, hidden layers process it, and the output layer provides the result.
+   - **Challenges**: Deciding the number of neurons and hidden layers, and selecting appropriate activation functions and architectures for specific tasks.
+
+6. **Biological Inspiration**:
+   - **Analogous to the Brain**: Neurons in a neural network function similarly to neurons in the human brain, processing inputs and passing outputs to other neurons based on certain conditions (activation functions).
+
