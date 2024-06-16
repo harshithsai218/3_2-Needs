@@ -383,3 +383,65 @@ NLTK (Natural Language Toolkit) is a powerful tool for natural language processi
      pos_tag(word_tokenize('NLTK is a powerful tool for natural language processing.'))
      ```
      Output: `[('NLTK', 'NNP'), ('is', 'VBZ'), ('a', 'DT'), ('powerful', 'JJ'), ('tool', 'NN'), ('for', 'IN'), ('natural', 'JJ'), ('language', 'NN'), ('processing', 'NN'), ('.', '.')]`
+
+
+
+# Rescaling, Python
+
+Rescaling, or scaling of data, is a critical step in data preprocessing when preparing data for machine learning algorithms. It involves transforming numerical features to a common scale, which is essential because many machine learning algorithms make decisions based on the distances between data points. In simple terms, Rescaling data makes sure all numbers are on the same scale, helping algorithms compare them accurately for better predictions.  
+
+Here’s a detailed explanation of rescaling using the Min-Max scaling technique:
+
+## Theory of Rescaling:
+
+### Why Rescale Data?
+Machine learning algorithms often calculate distances between data points (e.g., Euclidean distance) as part of their operations. If features have different scales, those with larger ranges can disproportionately influence the learning process. Rescaling ensures that all features contribute equally to the analysis and improves the performance and convergence of the algorithms.
+
+### Min-Max Scaling:
+Min-Max scaling is one of the simplest methods for rescaling data. It transforms features to a specified range, typically between 0 and 1. The formula for Min-Max scaling is:
+$$
+X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}}
+$$
+where:
+- $X$ is the original feature value.
+- $X_{min}$ is the minimum value of $X$ in the dataset.
+- $X_{max}$ is the maximum value of $X$ in the dataset.
+
+This transformation ensures that all values lie within the range [0, 1].
+
+## Steps to Implement Min-Max Scaling:
+
+### 1. Importing Libraries:
+```python
+from sklearn import preprocessing
+import numpy as np
+```
+- `sklearn.preprocessing` provides utilities for scaling, transforming, and normalizing data.
+- `numpy` (imported as `np`) is used for creating and manipulating arrays.
+
+### 2. Creating the Data Array:
+```python
+x = np.array([[-500.5],
+              [-100.1],
+              [0],
+              [100.1],
+              [900.9]])
+```
+- `x` is a numpy array containing the data points we want to scale.
+
+### 3. Scaling the Array:
+```python
+minmax_scale = preprocessing.MinMaxScaler(feature_range=(0, 1))
+x_scale = minmax_scale.fit_transform(x)
+```
+- `preprocessing.MinMaxScaler` is initialized with `feature_range=(0, 1)`, specifying the desired range for scaled values.
+- `.fit_transform(x)` fits the scaler to the data (`x`) and transforms it to the scaled version (`x_scale`).
+
+### 4. Output:
+```python
+print("Original Data:")
+print(x)
+print("\nScaled Data:")
+print(x_scale)
+```
+- The original data (`x`) and the scaled data (`x_scale`) are printed for comparison.
