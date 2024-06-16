@@ -120,7 +120,7 @@ Deep learning has become a cornerstone of modern AI, enabling breakthroughs in v
 
 ![](img/2024-06-16-16-59-04.png)
 
-#### Key Concepts in Deep Learning
+### Key Concepts in Deep Learning
 
 1. **Artificial Neural Networks (ANNs)**:  
    Artificial Neural Networks (ANNs) are the building blocks of deep learning. These networks consist of interconnected nodes, or neurons, organized into layers:
@@ -158,4 +158,51 @@ Deep learning has become a cornerstone of modern AI, enabling breakthroughs in v
 
 6. **Biological Inspiration**:
    - **Analogous to the Brain**: Neurons in a neural network function similarly to neurons in the human brain, processing inputs and passing outputs to other neurons based on certain conditions (activation functions).
+
+
+# Web Scraping
+
+## What is Web Scraping?
+
+Web scraping refers to the automated process of extracting data from websites. It involves using software tools to retrieve information from web pages, which can then be saved, analyzed, or used for various purposes.
+
+## How Does Web Scraping Work?
+
+![](img/2024-06-16-17-04-39.png)
+
+1. **Fetching HTML**: Web scraping starts by fetching the HTML content of a web page. HTML (Hypertext Markup Language) is the code that structures a web page and contains the text, links, and other elements displayed on the page.
+
+2. **Parsing HTML**: Once the HTML is fetched, specialized software libraries (like BeautifulSoup in Python) are used to parse the HTML document. Parsing involves breaking down the HTML into its component parts (like headings, paragraphs, tables) that can be easily navigated and manipulated programmatically.
+
+3. **Extracting Data**: After parsing, web scrapers locate specific data elements within the HTML. This might include product information, prices, contact details, or any other data displayed on the website.
+
+4. **Outputting Data**: The extracted data can be saved in various formats such as Excel spreadsheets, CSV files, databases (like MySQL or MongoDB), or JSON files. This allows for further analysis, reporting, or integration with other systems.
+
+## Steps Involved in Web Scraping:
+
+1. **Identify URLs**: Determine the URLs of the websites or web pages from which you want to extract data.
+
+2. **Inspecting the Page**: Understand the structure of the web page by inspecting its HTML source using browser developer tools. This helps identify where the desired data is located within the HTML.
+
+3. **Locate Data**: Using programming languages like Python, write code that navigates through the HTML structure to locate and extract the specific data elements of interest.
+
+4. **Coding the Scraper**: Develop a script or program that automates the fetching, parsing, and extraction process. Libraries such as `BeautifulSoup` and `requests` in Python are commonly used for these tasks.
+
+5. **Execute the Scraper**: Run the script to start the scraping process. The scraper sends requests to the web server, retrieves the HTML content, parses it, extracts the data, and then stores or processes it as required.
+
+6. **Handle Errors and Edge Cases**: Ensure the scraper handles unexpected situations gracefully, such as handling timeouts, connection errors, or changes in the website's HTML structure.
+
+## Applications of Web Scraping:
+
+- **Market Research**: Gathering pricing information from competitors' websites.
+- **Data Aggregation**: Collecting news headlines or weather data from multiple sources.
+- **Lead Generation**: Extracting contact information for potential sales leads.
+- **Monitoring and Alerting**: Tracking changes in product prices or stock availability.
+- **Content Aggregation**: Building databases of recipes, job listings, or real estate listings.
+
+### Legal and Ethical Considerations:
+
+- **Respect Terms of Service**: Many websites have terms of service that prohibit or restrict web scraping. It's important to review and comply with these terms to avoid legal issues.
+  
+- **Ethical Use**: Avoid scraping websites excessively or in a way that disrupts their normal operation. Respect the website's bandwidth and server resources.
 
