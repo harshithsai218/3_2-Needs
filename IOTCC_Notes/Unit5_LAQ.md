@@ -26,4 +26,4 @@ In the context of smart cities, learning using IoT refers to the integration of 
    - **Mobile Apps**: IoT-powered mobile applications provide citizens with real-time information on city services, enhancing transparency and participation.
    - **Feedback Systems**: IoT systems enable citizens to report issues such as potholes or broken streetlights directly to municipal authorities.
 
-Learning in smart cities through IoT leads to more efficient urban management, improved quality of life for residents, and sustainable development by leveraging real-time data and advanced analytics to make informed decisions【6†source】【5†source】.
+Learning in smart cities through IoT leads to more efficient urban management, improved quality of life for residents, and sustainable development by leveraging real-time data and advanced analytics to make informed decisions.
