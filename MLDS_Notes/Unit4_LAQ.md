@@ -445,3 +445,6 @@ print("\nScaled Data:")
 print(x_scale)
 ```
 - The original data (`x`) and the scaled data (`x_scale`) are printed for comparison.
+
+
+
