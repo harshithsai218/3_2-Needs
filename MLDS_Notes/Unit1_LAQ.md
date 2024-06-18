@@ -46,7 +46,68 @@ $$v = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$
      $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$$
      $$\|a\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}$$
 
-These operations are crucial in various machine learning algorithms and are implemented using libraries such as NumPy in Python, which allows for efficient and concise vector operations【8†source】.
+
+# Central Limit Theorem (CLT)
+
+The Central Limit Theorem is a fundamental concept in statistics and probability theory that states that the distribution of the sum (or average) of a large number of independent, identically distributed random variables approaches a normal (Gaussian) distribution, regardless of the original distribution of the variables. This theorem is crucial because it justifies the use of the normal distribution in many statistical procedures, even when the data do not follow a normal distribution.
+
+**Key Points of the Central Limit Theorem:**
+1. **Independence:** The random variables must be independent.
+2. **Identically Distributed:** The random variables should be identically distributed.
+3. **Sample Size:** The sample size should be sufficiently large (commonly n > 30 is used as a rule of thumb).
+4. **Convergence to Normal Distribution:** As the sample size increases, the distribution of the sample mean approaches a normal distribution with mean $\mu$ (the population mean) and standard deviation $\sigma/\sqrt{n}$ (where $\sigma$ is the population standard deviation and $n$ is the sample size).
+
+**Mathematical Expression:**
+Let $X_1, X_2, \ldots, X_n$ be a sequence of $n$ independent and identically distributed (i.i.d.) random variables with mean $\mu$ and variance $\sigma^2$. The sample mean $\overline{X}$ is given by:
+$$\overline{X} = \frac{1}{n} \sum_{i=1} {n} X_i$$
+
+According to the CLT:
+$$\frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \rightarrow N(0, 1) \text{ as } n \rightarrow \infty$$
+This means that the standardized sample mean follows a standard normal distribution (mean 0 and variance 1) as the sample size becomes large.
+
+**Implications:**
+- The CLT allows us to make inferences about the population mean using the sample mean.
+- It underlies many statistical methods, including confidence intervals and hypothesis testing.
+
+## Central Tendencies
+
+Central tendencies are statistical measures that describe the center or typical value of a dataset. The most common measures of central tendency are the mean, median, and mode. These measures provide insight into the distribution of data points in a dataset.
+
+1. **Mean (Arithmetic Average):**
+   - The mean is the sum of all the data points divided by the number of data points.
+   - **Formula:**
+     $$\text{Mean} (\mu) = \frac{1}{n} \sum_{i=1}^n x_i$$
+   - **Example:**
+     For the dataset $3, 5, 7, 8, 10$:
+     $$\text{Mean} = \frac{3+5+7+8+10}{5} = \frac{33}{5} = 6.6$$
+
+2. **Median:**
+   - The median is the middle value in a dataset when the values are arranged in ascending or descending order.
+   - If the number of observations is odd, the median is the middle value.
+   - If the number of observations is even, the median is the average of the two middle values.
+   - **Example:**
+     For the dataset $3, 5, 7, 8, 10$ (odd number of observations), the median is 7.
+     For the dataset $3, 5, 7, 8$ (even number of observations), the median is $\frac{5+7}{2} = 6$.
+
+3. **Mode:**
+   - The mode is the value that occurs most frequently in a dataset.
+   - A dataset may have no mode, one mode (unimodal), or more than one mode (bimodal or multimodal).
+   - **Example:**
+     For the dataset $3, 5, 7, 7, 8, 10$, the mode is 7 because it appears most frequently.
+
+### Comparing Central Tendencies
+
+- **Mean** is sensitive to extreme values (outliers), which can skew the mean, making it less representative of the dataset.
+- **Median** is robust to outliers and provides a better measure of central tendency for skewed distributions.
+- **Mode** is useful for categorical data where we want to know the most common category.
+
+### Applications in Machine Learning
+
+- **Data Preprocessing:** Understanding the central tendencies helps in normalizing or standardizing data.
+- **Feature Engineering:** Central tendency measures can be used to impute missing values.
+- **Model Interpretation:** Knowing the central tendency of features can provide insights into the distribution and nature of the data, aiding in better model interpretation and debugging.
+
+
 
 # Simpson's Paradox
 
