@@ -1,3 +1,53 @@
+# Vectors in Machine Learning
+
+In machine learning, vectors are fundamental data structures used to represent data points, features, weights, and other numerical information. A vector is essentially an ordered list of numbers, which can represent points in space, features of a data point, or coefficients in a model. Vectors are denoted using lowercase letters and can be represented in horizontal (row vector) or vertical (column vector) forms.
+
+**Example:**
+A vector $v$ with three elements can be written as:
+$$v = (v_1, v_2, v_3)$$
+or in column form:
+$$v = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$
+
+## Operations on Vectors
+
+1. **Vector Addition:**
+   - Adding two vectors of the same length results in a new vector where each element is the sum of the corresponding elements of the input vectors.
+   - **Example:**
+     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+     $$c = a + b = \begin{pmatrix} 1+4 \\ 2+5 \\ 3+6 \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \\ 9 \end{pmatrix}$$
+
+2. **Vector Subtraction:**
+   - Subtracting one vector from another of the same length results in a new vector where each element is the difference of the corresponding elements.
+   - **Example:**
+     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+     $$c = a - b = \begin{pmatrix} 1-4 \\ 2-5 \\ 3-6 \end{pmatrix} = \begin{pmatrix} -3 \\ -3 \\ -3 \end{pmatrix}$$
+
+3. **Element-wise Multiplication:**
+   - Multiplying two vectors element-wise results in a new vector where each element is the product of the corresponding elements.
+   - **Example:**
+     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+     $$c = a \times b = \begin{pmatrix} 1 \times 4 \\ 2 \times 5 \\ 3 \times 6 \end{pmatrix} = \begin{pmatrix} 4 \\ 10 \\ 18 \end{pmatrix}$$
+
+4. **Element-wise Division:**
+   - Dividing one vector by another element-wise results in a new vector where each element is the quotient of the corresponding elements.
+   - **Example:**
+     $$a = \begin{pmatrix} 4 \\ 9 \\ 16 \end{pmatrix}, \quad b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
+     $$c = a \div b = \begin{pmatrix} 4 \div 2 \\ 9 \div 3 \\ 16 \div 4 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
+
+5. **Dot Product:**
+   - The dot product of two vectors is a scalar value obtained by multiplying corresponding elements and summing the results.
+   - **Example:**
+     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+     $$a \cdot b = 1 \times 4 + 2 \times 5 + 3 \times 6 = 4 + 10 + 18 = 32$$
+
+6. **Norm (Magnitude) of a Vector:**
+   - The norm of a vector is a measure of its length. The Euclidean norm is the most common and is calculated as the square root of the sum of the squares of its elements.
+   - **Example:**
+     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$$
+     $$\|a\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}$$
+
+These operations are crucial in various machine learning algorithms and are implemented using libraries such as NumPy in Python, which allows for efficient and concise vector operations【8†source】.
+
 # Simpson's Paradox
 
 Simpson's paradox is a statistical phenomenon where the direction of a relationship between variables can change when data is combined or disaggregated. This paradox occurs when groups of data show a certain trend, but when combined, the trend reverses. It is crucial to understand and identify this paradox to correctly interpret data. In simpler terms, it is when the relationship between two variables is not consistent. This paradox is named after Edward Simpson, who first described it in 1951.
