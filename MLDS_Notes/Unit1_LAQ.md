@@ -377,3 +377,86 @@ One way to avoid P-Hacking is to use **Multiple Hypothesis Testing**. This is wh
 - But also, more tests will mean that there will be more false positives(5% of total tests in our case). 5 out of 100, 50 out of 1000 or 500 out of 10,000! This is also called the Multiple Testing Problem.
 
 - P-Hacking or Data dredging is a method to misuse the data analysis techniques to find patterns in data that appear significant but are not. This method affects the study negatively as it gives false promises to provide significant data patterns which in turn can lead to a drastic increase in the number of false positives.
+
+
+<details>
+<summary> Rule Induction (Unsure of it's correctness)</summary>
+# Learning by Rule Induction
+
+Rule induction is a method in machine learning used to extract useful if-then rules from a dataset. These rules are easy to interpret and can be used for decision-making, classification, and knowledge discovery. The process involves generating rules that capture patterns in the data, typically in the form of "IF (conditions) THEN (conclusion)". This method is particularly useful in scenarios where interpretability is crucial.
+
+### Process of Rule Induction
+
+1. **Data Collection and Preparation:**
+   - Gather and preprocess the data, ensuring it is clean and suitable for analysis. This involves handling missing values, encoding categorical variables, and normalizing numerical features if necessary.
+
+2. **Identify Features and Target:**
+   - Determine the input features (independent variables) and the target variable (dependent variable) that you want to predict or classify.
+
+3. **Rule Generation:**
+   - Use an algorithm to generate rules from the data. Common algorithms include:
+     - **Decision Trees:** Algorithms like ID3, C4.5, and CART generate a tree structure where each path from the root to a leaf node represents a rule.
+     - **Association Rule Mining:** Algorithms like Apriori and FP-Growth identify frequent itemsets and generate association rules.
+
+4. **Rule Evaluation:**
+   - Assess the generated rules based on metrics such as support, confidence, and lift to determine their strength and reliability.
+     - **Support:** The proportion of records in the dataset that satisfy the rule.
+     - **Confidence:** The proportion of records that satisfy the antecedent (IF part) of the rule and also satisfy the consequent (THEN part).
+     - **Lift:** The ratio of the observed support to that expected if the rule's antecedent and consequent were independent.
+
+5. **Pruning Rules:**
+   - Remove redundant or less significant rules to simplify the model and improve interpretability. This step helps in avoiding overfitting.
+
+6. **Rule Application:**
+   - Apply the final set of rules to new data for prediction or classification.
+
+### Example of Rule Induction
+
+**Scenario:**
+Suppose we have a dataset of customer transactions at a retail store. The goal is to identify patterns in purchasing behavior to predict whether a customer will buy a specific product, say "Product A".
+
+**Step-by-Step Process:**
+
+1. **Data Collection and Preparation:**
+   - Collect transaction data with features such as Age, Income, Gender, Past Purchases, and the target variable Purchase_Product_A (Yes/No).
+
+2. **Identify Features and Target:**
+   - Features: Age, Income, Gender, Past Purchases
+   - Target: Purchase_Product_A
+
+3. **Rule Generation using a Decision Tree Algorithm:**
+   - Apply a decision tree algorithm (e.g., CART) to generate rules. The algorithm splits the data based on feature values to create a tree where each leaf node represents a classification decision.
+
+4. **Generated Rules:**
+   - Example rules from the decision tree might be:
+     1. IF Age > 30 AND Income > $50,000 THEN Purchase_Product_A = Yes
+     2. IF Age <= 30 AND Past Purchases includes "Product B" THEN Purchase_Product_A = Yes
+     3. IF Gender = Male AND Income <= $50,000 THEN Purchase_Product_A = No
+
+5. **Rule Evaluation:**
+   - Calculate the support, confidence, and lift for each rule:
+     - **Support:** How often the rule applies to the dataset.
+     - **Confidence:** How often the rule is correct when it applies.
+     - **Lift:** How much more likely the consequent is given the antecedent compared to random chance.
+
+6. **Pruning Rules:**
+   - Remove any rules with low support or confidence to avoid overfitting. For instance, if Rule 3 has low confidence, it might be pruned.
+
+7. **Rule Application:**
+   - Use the final set of rules to predict whether new customers will purchase "Product A". For a new customer with Age = 35 and Income = $60,000, Rule 1 would predict Purchase_Product_A = Yes.
+
+**Example Decision Tree:**
+
+```
+           [Root]
+            /  \
+   Age > 30   Age <= 30
+     /           \
+Income > 50K   Past Purchases include "Product B"
+   /                 \
+Yes               Yes
+```
+
+From this tree, we extract the rules as outlined earlier.
+
+<details>
