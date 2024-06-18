@@ -169,6 +169,8 @@ The Random Forest algorithm is a popular machine learning technique used for bot
 
 # Support Vector Machines (SVM)
 
+*Note: It's recommended to check the Unit 2 for more accurate details*
+
 Support Vector Machines (SVM) are supervised learning models used for classification and regression tasks. They are particularly well-known for their application in classification problems.
 
 ![](img/2024-06-18-18-26-42.png)
@@ -196,3 +198,40 @@ Support Vector Machines (SVM) are supervised learning models used for classifica
 
 - **Computational Complexity**: Training can be computationally intensive, especially with large datasets.
 - **Choice of Kernel**: The performance highly depends on the choice of the kernel and its parameters.
+
+
+# Classification Errors
+
+Classification errors are critical in understanding the performance of predictive models, especially in binary classification problems. These errors can be broadly categorized into two types: Type I errors (false positives) and Type II errors (false negatives).
+
+### In-Sample and Out-of-Sample Errors
+- **In-Sample Errors**: These errors occur on the training data used to build the model. A low in-sample error rate may suggest a high-performing model, but it can also indicate overfitting, where the model captures noise in the training data and fails to generalize.
+- **Out-of-Sample Errors**: These errors occur on new, unseen data (test data). They are crucial as they reflect the model's ability to generalize. The primary goal is to minimize out-of-sample errors to ensure the model performs well on real-world data.
+
+### Error Types in Binary Classification
+Binary classification involves predicting one of two outcomes (e.g., cancer/no cancer, spam/ham). The errors in this context are:
+
+- **Type I Error (False Positive)**: This occurs when the model incorrectly predicts a positive class. For example, predicting a person has cancer when they do not. This can lead to unnecessary stress, additional tests, and increased medical costs.
+- **Type II Error (False Negative)**: This occurs when the model incorrectly predicts a negative class. For example, predicting a person does not have cancer when they actually do. This can have severe consequences, including missed treatments and worsening of the condition.
+
+### Tradeoffs Between Type I and Type II Errors
+- **Cancer Diagnosis Example**:
+  - **False Positive**: It's when the patient is diagnosed with cancer but in truth, they don't. Causes emotional distress, additional tests, and costs.
+  - **False Negative**: It's when the patient is not diagnosed with cancer but in truth, they do. Potentially life-threatening as treatment might be delayed.
+  - Tradeoff Consideration: In medical diagnostics, minimizing false negatives is often prioritized due to the severe implications of missing a disease diagnosis.
+  
+- **Spam Detection Example**:
+  - **False Positive**: Legitimate emails marked as spam, possibly missing important communications.
+  - **False Negative**: Spam emails reaching the inbox, causing minor inconvenience.
+  - Tradeoff Consideration: Email providers typically tolerate some false negatives (letting spam through) to avoid the user missing important emails (false positives).
+
+*Note: If you want to read about metrics, it's better to refer the Unit 2 notes*
+
+### Metrics for Classification Errors
+To comprehensively evaluate a classification model, several metrics are used:
+- **Confusion Matrix**: Summarizes true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN).
+- **Accuracy**: $\frac{TP + TN}{TP + TN + FP + FN}$ - overall correctness of the model.
+- **Precision**: $\frac{TP}{TP + FP}$ - proportion of positive predictions that are actually correct.
+- **Recall (Sensitivity)**: $\frac{TP}{TP + FN}$ - proportion of actual positives correctly identified.
+- **F1 Score**: Harmonic mean of precision and recall, useful when the class distribution is imbalanced.
+- **ROC Curve and AUC**: Plot of true positive rate vs. false positive rate, with AUC representing the area under this curve; higher AUC indicates better model performance.
