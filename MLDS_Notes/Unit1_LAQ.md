@@ -459,4 +459,179 @@ Yes               Yes
 
 From this tree, we extract the rules as outlined earlier.
 
-<details>
+</details>
+
+
+# Matrices and Matrix Operations
+
+Matrices are fundamental mathematical structures used in various fields such as mathematics, physics, computer science, and engineering. They are essential in areas like computer graphics, machine learning, and scientific computing. 
+
+#### Definition of a Matrix
+
+A matrix is a rectangular array of numbers arranged in rows and columns. It is denoted by a capital letter (e.g., A, B, C) and its elements are typically denoted by lowercase letters with two subscripts indicating their row and column positions (e.g., \(a_{ij}\) represents the element in the i-th row and j-th column of matrix A).
+
+**Example**:
+$$ 
+A = \begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix} 
+$$
+
+#### Types of Matrices
+
+1. **Row Matrix**: A matrix with a single row.
+2. **Column Matrix**: A matrix with a single column.
+3. **Square Matrix**: A matrix with the same number of rows and columns.
+4. **Diagonal Matrix**: A square matrix where all off-diagonal elements are zero.
+5. **Identity Matrix**: A diagonal matrix where all diagonal elements are one.
+6. **Zero Matrix**: A matrix where all elements are zero.
+
+### Matrix Operations
+
+#### 1. Matrix Addition
+
+Two matrices can be added if and only if they have the same dimensions. The sum is obtained by adding corresponding elements.
+
+**Example**:
+$$
+A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{pmatrix}, \quad
+B = \begin{pmatrix}
+7 & 8 & 9 \\
+10 & 11 & 12
+\end{pmatrix}
+$$
+
+$$
+A + B = \begin{pmatrix}
+1+7 & 2+8 & 3+9 \\
+4+10 & 5+11 & 6+12
+\end{pmatrix} = \begin{pmatrix}
+8 & 10 & 12 \\
+14 & 16 & 18
+\end{pmatrix}
+$$
+
+#### 2. Matrix Subtraction
+
+Matrix subtraction follows the same element-wise process as matrix addition, but instead of adding, the corresponding elements are subtracted.
+
+**Example**:
+$$
+A - B = \begin{pmatrix}
+1-7 & 2-8 & 3-9 \\
+4-10 & 5-11 & 6-12
+\end{pmatrix} = \begin{pmatrix}
+-6 & -6 & -6 \\
+-6 & -6 & -6
+\end{pmatrix}
+$$
+
+#### 3. Scalar Multiplication
+
+Scalar multiplication involves multiplying each element of a matrix by a scalar (a single number).
+
+**Example**:
+$$
+k = 2, \quad A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{pmatrix}
+$$
+
+$$
+kA = 2 \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{pmatrix} = \begin{pmatrix}
+2 & 4 & 6 \\
+8 & 10 & 12
+\end{pmatrix}
+$$
+
+#### 4. Matrix Multiplication
+
+Matrix multiplication is more complex. Two matrices can be multiplied if the number of columns in the first matrix equals the number of rows in the second matrix. The resulting matrix has the dimensions of the number of rows of the first matrix by the number of columns of the second matrix.
+
+**Example**:
+$$
+A = \begin{pmatrix}
+1 & 2 \\
+3 & 4
+\end{pmatrix}, \quad
+B = \begin{pmatrix}
+5 & 6 \\
+7 & 8
+\end{pmatrix}
+$$
+
+$$
+AB = \begin{pmatrix}
+(1*5 + 2*7) & (1*6 + 2*8) \\
+(3*5 + 4*7) & (3*6 + 4*8)
+\end{pmatrix} = \begin{pmatrix}
+19 & 22 \\
+43 & 50
+\end{pmatrix}
+$$
+
+#### 5. Transpose of a Matrix
+
+The transpose of a matrix is obtained by swapping rows with columns.
+
+**Example**:
+$$
+A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{pmatrix}
+$$
+
+$$
+A^T = \begin{pmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6
+\end{pmatrix}
+$$
+
+#### 6. Determinant of a Matrix
+
+The determinant is a scalar value that can be computed from the elements of a square matrix. It provides important properties of the matrix, such as invertibility.
+
+**Example**:
+For a 2x2 matrix:
+$$
+A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
+$$
+\text{det}(A) = ad - bc
+$$
+
+#### 7. Inverse of a Matrix
+
+The inverse of a square matrix \(A\) is denoted by \(A^{-1}\) and satisfies the equation \(AA^{-1} = A^{-1}A = I\), where \(I\) is the identity matrix. A matrix has an inverse if and only if its determinant is non-zero.
+
+**Example**:
+For a 2x2 matrix:
+$$
+A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
+$$
+A^{-1} = \frac{1}{ad - bc} \begin{pmatrix}
+d & -b \\
+-c & a
+\end{pmatrix}
+$$
