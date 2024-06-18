@@ -93,3 +93,40 @@ Suppose we want to classify a new data point that looks similar to a cat or a do
   - Sensitive to the scale of the data and irrelevant features.
 
 
+
+# Regularization
+
+Regularization is a technique used in regression to prevent overfitting by constraining or shrinking the coefficient estimates towards zero. It discourages learning overly complex models by adding a penalty to the loss function used for training the model. The primary goal is to improve the model's generalization to new data by reducing its sensitivity to noise in the training data.
+
+### RSS Equation
+The Residual Sum of Squares (RSS) is the loss function used in linear regression and is defined as:
+$$RSS = \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
+where $y_i$ is the actual value, and $\hat{y}_i$ is the predicted value.
+
+![](img/2024-06-18-18-20-34.png)
+
+### Ridge Regression (L2 Regularization)
+Ridge regression modifies the RSS by adding a penalty term proportional to the sum of the squared coefficients:
+$$\text{Ridge Penalty} = \lambda \sum_{j=1}^p \beta_j^2$$
+The new loss function to be minimized becomes:
+$$RSS + \lambda \sum_{j=1}^p \beta_j^2$$
+Here, $\lambda$ is the tuning parameter that controls the strength of the penalty. As $\lambda$ increases, the coefficients are shrunk towards zero, reducing the model's complexity.
+
+### Lasso Regression (L1 Regularization)
+Lasso regression also modifies the RSS by adding a penalty term, but it uses the sum of the absolute values of the coefficients:
+$$\text{Lasso Penalty} = \lambda \sum_{j=1}^p |\beta_j|$$
+The new loss function becomes:
+$$RSS + \lambda \sum_{j=1}^p |\beta_j|$$
+Lasso not only shrinks coefficients but can set some of them to zero, effectively performing feature selection.
+
+### Elastic Net Regression
+Elastic Net combines both L1 and L2 penalties:
+$$\text{Elastic Net Penalty} = \alpha \sum_{j=1}^p |\beta_j| + (1 - \alpha) \sum_{j=1}^p \beta_j^2$$
+The loss function is:
+$$RSS + \alpha \sum_{j=1}^p |\beta_j| + (1 - \alpha) \sum_{j=1}^p \beta_j^2$$
+Here, $\alpha$ is a hyperparameter that balances the contributions of L1 and L2 penalties. This method retains the benefits of both ridge and lasso regression, making it useful when dealing with highly correlated predictors.
+
+### Standardization of Predictors
+For ridge and elastic net regression, it is essential to standardize predictors (i.e., bring them to the same scale) since these methods are not scale-invariant. This ensures that all predictors contribute equally to the regularization process.
+
+In summary, regularization techniques like ridge, lasso, and elastic net help in building models that generalize better to new data by penalizing large coefficients and thus controlling model complexity.
