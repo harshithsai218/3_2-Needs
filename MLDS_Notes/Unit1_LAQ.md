@@ -108,6 +108,110 @@ Central tendencies are statistical measures that describe the center or typical 
 - **Model Interpretation:** Knowing the central tendency of features can provide insights into the distribution and nature of the data, aiding in better model interpretation and debugging.
 
 
+# Statistical Hypothesis Testing
+
+Statistical hypothesis testing is a method used to make decisions or inferences about population parameters based on sample data. It involves formulating a hypothesis, conducting experiments or collecting data, and then using statistical techniques to determine whether there is enough evidence to reject or fail to reject the hypothesis.
+
+## Key Concepts
+
+1. **Null Hypothesis (H0):**
+   - The null hypothesis is a statement of no effect, no difference, or no change. It is the default assumption that any observed effect is due to random chance.
+   - **Example:** H0: The mean test score of students who used a new study method is equal to the mean test score of students who used the traditional method.
+
+2. **Alternative Hypothesis (H1 or Ha):**
+   - The alternative hypothesis is a statement that indicates the presence of an effect, difference, or change. It is what the researcher aims to support.
+   - **Example:** H1: The mean test score of students who used the new study method is higher than the mean test score of students who used the traditional method.
+
+3. **Test Statistic:**
+   - A test statistic is a standardized value calculated from sample data during a hypothesis test. It is used to determine whether to reject the null hypothesis.
+   - Common test statistics include the Z-score, t-score, chi-square, and F-statistic.
+
+4. **P-value:**
+   - The p-value is the probability of obtaining a test statistic at least as extreme as the one observed, given that the null hypothesis is true.
+   - A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so it is rejected.
+
+5. **Significance Level (α):**
+   - The significance level is a threshold set by the researcher (commonly 0.05) that determines whether the p-value is low enough to reject the null hypothesis.
+   - **Example:** If α = 0.05 and p-value < 0.05, reject H0.
+
+6. **Type I and Type II Errors:**
+   - **Type I Error (α):** Incorrectly rejecting the null hypothesis when it is true (false positive).
+   - **Type II Error (β):** Failing to reject the null hypothesis when it is false (false negative).
+
+### Steps in Hypothesis Testing
+
+1. **Formulate Hypotheses:**
+   - Define the null hypothesis (H0) and alternative hypothesis (H1).
+
+2. **Choose a Significance Level (α):**
+   - Decide on the significance level, typically 0.05.
+
+3. **Collect Data:**
+   - Gather sample data relevant to the hypotheses.
+
+4. **Calculate Test Statistic:**
+   - Compute the test statistic (e.g., Z-score, t-score) based on the sample data.
+
+5. **Determine P-value:**
+   - Calculate the p-value corresponding to the test statistic.
+
+6. **Make a Decision:**
+   - Compare the p-value with the significance level α.
+   - If p-value ≤ α, reject the null hypothesis.
+   - If p-value > α, fail to reject the null hypothesis.
+
+### Common Types of Hypothesis Tests
+
+1. **Z-test:**
+   - Used for large sample sizes (n > 30) or when the population variance is known.
+   - Tests whether the sample mean is significantly different from the population mean.
+
+2. **t-test:**
+   - Used for small sample sizes (n ≤ 30) or when the population variance is unknown.
+   - **Types of t-tests:**
+     - **One-sample t-test:** Tests if the sample mean is significantly different from a known value.
+     - **Independent two-sample t-test:** Tests if the means of two independent samples are significantly different.
+     - **Paired t-test:** Tests if the means of two related groups are significantly different.
+
+3. **Chi-square Test:**
+   - Used for categorical data to assess how likely it is that an observed distribution is due to chance.
+   - **Types of chi-square tests:**
+     - **Chi-square goodness-of-fit test:** Tests if a sample distribution matches a population distribution.
+     - **Chi-square test of independence:** Tests if there is an association between two categorical variables.
+
+4. **ANOVA (Analysis of Variance):**
+   - Used to compare the means of three or more groups.
+   - Tests if at least one group mean is significantly different from the others.
+
+### Example of Hypothesis Testing
+
+**Scenario:**
+A researcher wants to test if a new drug is more effective than the current drug. The effectiveness is measured by the reduction in blood pressure.
+
+1. **Formulate Hypotheses:**
+   - H0: The mean reduction in blood pressure for the new drug is equal to that of the current drug.
+   - H1: The mean reduction in blood pressure for the new drug is greater than that of the current drug.
+
+2. **Choose Significance Level:**
+   - α = 0.05
+
+3. **Collect Data:**
+   - Sample data: Reduction in blood pressure for 30 patients using the new drug and 30 patients using the current drug.
+
+4. **Calculate Test Statistic:**
+   - Use an independent two-sample t-test to compare means.
+
+5. **Determine P-value:**
+   - Calculate the p-value based on the t-test statistic.
+
+6. **Make a Decision:**
+   - If the p-value is less than 0.05, reject the null hypothesis, indicating that the new drug is more effective.
+
+### Conclusion
+
+Statistical hypothesis testing is a powerful tool for making data-driven decisions and drawing inferences about population parameters. It provides a structured framework for evaluating the evidence against a null hypothesis, enabling researchers to make objective and reproducible conclusions based on sample data.
+
+
 
 # Simpson's Paradox
 
