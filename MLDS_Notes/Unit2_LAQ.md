@@ -130,3 +130,69 @@ Here, $\alpha$ is a hyperparameter that balances the contributions of L1 and L2 
 For ridge and elastic net regression, it is essential to standardize predictors (i.e., bring them to the same scale) since these methods are not scale-invariant. This ensures that all predictors contribute equally to the regularization process.
 
 In summary, regularization techniques like ridge, lasso, and elastic net help in building models that generalize better to new data by penalizing large coefficients and thus controlling model complexity.
+
+
+
+# Random Forest Algorithm
+
+The Random Forest algorithm is a popular machine learning technique used for both classification and regression tasks. It is based on the concept of ensemble learning, which involves combining multiple classifiers to solve complex problems and improve the performance of the model. In simple words, Random Forest builds multiple decision trees on different subsets of the data and then combines their predictions to make a final prediction.
+
+![](img/2024-06-18-18-24-28.png)
+
+### Key Characteristics
+
+- **Ensemble of Decision Trees**: Random Forest consists of multiple decision trees built on different subsets of the dataset. The final output is determined by aggregating the predictions from each tree, often using majority voting for classification or averaging for regression.
+- **Random Subsets**: Each decision tree is trained on a random subset of the data points, which helps in reducing variance and avoiding overfitting.
+- **Feature Randomness**: In addition to using random subsets of data points, Random Forest also introduces randomness in the selection of features to split on while creating trees. This further decorrelates the trees and improves the model's performance.
+
+### Working Process
+
+1. **Data Sampling**: Select random K data points from the training set.
+2. **Tree Building**: Construct decision trees for these data points.
+3. **Model Creation**: Choose the number $N$ of trees to build and repeat the sampling and tree-building steps.
+4. **Prediction**: For a new data point, obtain the prediction from each decision tree. The final prediction is based on the majority vote (classification) or average (regression).
+
+### Advantages
+
+- **Versatility**: Capable of performing both classification and regression tasks.
+- **Robustness**: Handles large datasets with higher dimensionality effectively.
+- **Accuracy**: Reduces the risk of overfitting by averaging multiple trees.
+
+### Disadvantages
+
+- **Complexity**: More computationally intensive and complex compared to a single decision tree.
+- **Interpretability**: Less interpretable than individual decision trees.
+
+
+
+
+
+# Support Vector Machines (SVM)
+
+Support Vector Machines (SVM) are supervised learning models used for classification and regression tasks. They are particularly well-known for their application in classification problems.
+
+![](img/2024-06-18-18-26-42.png)
+
+### Key Concepts
+
+- **Hyperplane**: SVM aims to find the best hyperplane that separates data points of different classes. The best hyperplane is the one that maximizes the margin between the data points of different classes.
+- **Support Vectors**: The data points that are closest to the hyperplane are called support vectors. These points are critical in defining the position and orientation of the hyperplane.
+- **Margin**: It may be defined as the gap between two lines on the closet data points of different classes. It can be calculated as the perpendicular  istance from the line to the support vectors. Large margin is considered as a good margin and small margin is considered as a bad margin.
+
+### Working Process
+
+1. **Training**: The SVM algorithm takes labeled training data and finds the optimal hyperplane that separates the classes.
+2. **Margin Maximization**: It maximizes the distance (margin) between the closest data points (support vectors) of the classes.
+3. **Kernel Application**: If the data is not linearly separable, it uses kernel functions to map the input features into higher-dimensional spaces.
+4. **Prediction**: For new data points, SVM predicts the class based on which side of the hyperplane they fall on.
+
+### Advantages
+
+- **Effective in High Dimensions**: Works well with high-dimensional data.
+- **Memory Efficient**: Only uses a subset of training data (support vectors) for making decisions.
+- **Flexibility**: The use of different kernel functions allows SVM to adapt to various data complexities.
+
+### Disadvantages
+
+- **Computational Complexity**: Training can be computationally intensive, especially with large datasets.
+- **Choice of Kernel**: The performance highly depends on the choice of the kernel and its parameters.
