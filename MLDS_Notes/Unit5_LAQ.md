@@ -159,3 +159,39 @@ Netflix uses collaborative filtering to recommend movies and TV shows to its use
    - Solution: Advanced matrix factorization techniques and deep learning models can effectively handle sparsity by capturing latent factors and patterns in the data.
 
 
+
+# Text Representation Techniques
+
+In sentiment analysis, the choice of text representation techniques plays a crucial role in how effectively the sentiment of a piece of text can be understood and classified. Let's discuss how each of the mentioned techniques—One Hot Encoding, Bag of Words (BOW), N-grams, and Word Embedding—can be applied and their implications in sentiment analysis:
+
+1. **One Hot Encoding:**
+   - **Concept:** One Hot Encoding represents each word in the vocabulary as a sparse binary vector where only one bit is hot (1), corresponding to the index of the word in the vocabulary.
+   - **Application in Sentiment Analysis:** While straightforward, One Hot Encoding ignores semantic relationships between words and does not capture context or meaning. In sentiment analysis, this method can be limited because it doesn't differentiate between different words that might carry similar sentiment implications.
+
+![](img/2024-06-18-17-15-09.png)
+
+2. **Bag of Words (BOW):**
+   - **Concept:** BOW represents a document as a multiset of its words, disregarding grammar and word order but retaining multiplicity.
+   - **Application in Sentiment Analysis:** BOW is useful for sentiment analysis as it focuses on word occurrence frequencies. It treats each document as a collection of words and their counts, which can give a basic idea of the sentiment based on the presence and frequency of sentiment-laden words (e.g., 'happy', 'sad', 'good', 'bad').
+
+![](img/2024-06-18-17-15-34.png)
+
+3. **N-grams:**
+   - **Concept:** N-grams are sequences of N contiguous words in a text. They capture local word dependencies and are more informative than individual words alone.
+   - **Application in Sentiment Analysis:** N-grams can provide context-specific sentiment clues. For example, phrases like "not good" versus "very good" have opposite sentiments despite sharing the word "good". By including N-grams (bi-grams, tri-grams, etc.) in feature representation, sentiment analysis models can better grasp nuances in sentiment expression.
+
+![](img/2024-06-18-17-16-08.png)
+
+4. **Word Embedding (e.g., Word2Vec):**
+   - **Concept:** Word Embeddings map words into dense vectors in a continuous vector space where semantically similar words have similar vector representations.
+   - **Application in Sentiment Analysis:** Word Embeddings excel in capturing semantic relationships and context. Sentiment analysis benefits from embeddings as they encode not just the presence of words, but their meaning and contextual usage. Models trained with word embeddings can generalize better across different texts and capture sentiment nuances more effectively.
+
+**Usage Scenarios:**
+- **For Simple Models:** One Hot Encoding and BOW are simpler and more interpretable, suitable for basic sentiment analysis tasks where context and semantics are less critical.
+  
+- **For Nuanced Analysis:** N-grams and Word Embeddings are preferred for more sophisticated sentiment analysis tasks. N-grams help capture phrase-level sentiment clues, while Word Embeddings enhance the model's ability to understand context and word relationships.
+
+**Choosing the Right Technique:**
+- **Data and Task Complexity:** Choose simpler methods like BOW or One Hot Encoding for smaller datasets or when computational resources are limited.
+  
+- **Contextual Understanding:** Opt for N-grams or Word Embeddings when dealing with larger datasets or when nuanced sentiment analysis is required, such as understanding sentiment in reviews or social media posts.
