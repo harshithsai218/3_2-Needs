@@ -6,6 +6,8 @@ Recommender systems are powerful tools used in e-commerce and other domains to p
 
 Content-based recommender systems make recommendations by analyzing the attributes of items and the preferences of users. They hypothesize that if a user liked an item in the past, they will likely enjoy similar items in the future. These systems utilize keywords, categories, or other descriptive information about items to make recommendations.
 
+![](img/2024-06-18-17-24-20.png)
+
 #### Key Features:
 - **User Profiles**: These are created using historical data of users' interactions or by explicitly asking users about their preferences.
 - **Item Features**: Items are categorized based on their features. For example, movies can be categorized by genre, director, cast, etc.
@@ -25,6 +27,8 @@ Collaborative filtering is one of the most popular and effective approaches to r
 #### Key Features:
 - **User-Item Interactions**: The system uses data such as ratings, clicks, and purchase history to identify patterns in user behavior.
 - **Matrix Representation**: Interactions are often represented in a matrix form, where rows represent users and columns represent items. Each entry in the matrix indicates the interaction (e.g., rating) between a user and an item.
+
+![](img/2024-06-18-17-24-47.png)
 
 #### Methods:
 - **User-Based Collaborative Filtering**: This method finds users who have similar preferences and recommends items that these similar users have liked. For example, if users A and B have similar tastes, items liked by B will be recommended to A.
@@ -98,7 +102,7 @@ By combining these approaches, the company can gain detailed insights into custo
 
 
 
-# Collaborative Filtering Systems
+# Collaborative Filtering Systems (Verbose version)
 
 Collaborative filtering is a popular technique used in recommendation systems to predict user preferences and suggest items based on user-item interactions. It leverages the collective behavior and preferences of multiple users to generate recommendations. Collaborative filtering can be broadly categorized into two main approaches: memory-based and model-based methods.
 
