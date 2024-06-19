@@ -286,6 +286,7 @@ Big Data is crucial for organizations as it enables:
 
 
 # Four Components of Time Series
+**Definition of Time Series**: It is a statistical technique deals with time series data and trend analysis.Time Series data means data in a particular time periods or intervals.Time series data is data that is collected at different points in time.
 
 A time series $\{ Y_t \}$ consists of observations taken at regular intervals, typically defined by values $Y_1, Y_2, \ldots, Y_n$ of the variable $Y$ corresponding to times $t_1, t_2, \ldots, t_n$. Mathematically, this relationship can be expressed as:
 
