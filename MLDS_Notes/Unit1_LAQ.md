@@ -295,6 +295,12 @@ In mathematical terms:
 **Correlation:**
 Imagine you have two variables, X and Y, and you're interested in understanding if there's a relationship between them. You can plot them on a graph, with X on the horizontal axis and Y on the vertical axis. Each data point represents a pair of values for X and Y.
 
+*cov* is covariance. A quantitative measure of the joint variability between two or more variables
+*cor* is correlation. Measures the relationship between two variables and ranges from -1 to 1
+<p align="center">
+  <img src="img/2024-06-19-12-00-32.png" alt="Correlation Formula">
+</p>
+
 Here's an example scatterplot:
 
 ```
