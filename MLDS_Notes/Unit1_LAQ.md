@@ -302,17 +302,17 @@ Here's an example scatterplot:
     |
     |    ●
     |           ●
-    |    ●                ●
+    |    ●                
     |                 ●
     |          ●
-    |                        ●
-    |                ●
+    |                     ● 
+    |                ●       ●
     |-------------------●-------- X
     |
     |
 ```
 
-In this scatterplot, you see a general trend where as X increases, Y tends to increase as well. This positive relationship is an example of correlation.
+In this scatterplot, you see a general trend where as X increases, Y tends to decrease. This negative relationship is an example of correlation.
 
 Now, let's consider the correlation coefficient. It quantifies the strength and direction of the relationship between X and Y. If the correlation coefficient is close to 1, it indicates a strong positive correlation. If it's close to -1, it indicates a strong negative correlation. A correlation coefficient close to 0 suggests little to no correlation.
 
