@@ -14,7 +14,7 @@ v = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}
 
 ## Operations on Vectors
 
-*Note: The vectors are supposed to be displayed vertically, but github somehow f*ks it up, so remember that they are vertical*
+*Note: The vectors are supposed to be displayed vertically, but github somehow f\*ks it up, so remember that they are vertical*
 
 1. **Vector Addition:**
    - Adding two vectors of the same length results in a new vector where each element is the sum of the corresponding elements of the input vectors.
