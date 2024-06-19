@@ -138,6 +138,8 @@ Statistical hypothesis testing is a method used to make decisions or inferences 
    - **Type I Error (α):** Incorrectly rejecting the null hypothesis when it is true (false positive).
    - **Type II Error (β):** Failing to reject the null hypothesis when it is false (false negative).
 
+7. **Confidence Interval (CI):** the range with the most probable values for the unknown parameter with a (1-α)% level of confidence.
+
 ### Steps in Hypothesis Testing
 
 1. **Formulate Hypotheses:**
@@ -207,10 +209,15 @@ A researcher wants to test if a new drug is more effective than the current drug
 6. **Make a Decision:**
    - If the p-value is less than 0.05, reject the null hypothesis, indicating that the new drug is more effective.
 
-### Conclusion
+### Confidence Interval and Hypothesis Testing
 
-Statistical hypothesis testing is a powerful tool for making data-driven decisions and drawing inferences about population parameters. It provides a structured framework for evaluating the evidence against a null hypothesis, enabling researchers to make objective and reproducible conclusions based on sample data.
+*If the question os about Justifying Confidence interval is a statistical inference, you will need the following info*
 
+**Statistical Inference**: Estimating a population parameter using sample data, involving data collection, hypothesis testing, and result interpretation.
+
+**Confidence Interval (CI)**: A range of values likely to contain the true population parameter with a specified confidence level (e.g., 95%). It provides plausible values based on sample data.
+
+**Justification**: Yes, a confidence interval (CI) is a type of statistical inference. It uses probability to estimate a population parameter or the difference between parameters. CIs offer a range of values within which a sample statistic is expected to lie at a given confidence level, typically 95%. For instance, a 95% CI for a population mean of (9.303, 10.697) suggests a 95% probability that the true population mean falls within this interval.
 
 
 # Simpson's Paradox
