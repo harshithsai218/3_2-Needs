@@ -325,6 +325,8 @@ Now, let's consider the correlation coefficient. It quantifies the strength and 
 **Causation:**
 Causation, on the other hand, implies that changes in one variable directly cause changes in another. It's not enough to observe a relationship; you need to establish a cause-and-effect relationship.
 
+Causation is a term that is used to indicate a causal relationship between two variables; one variable is dependent on the other. In a causal relationship, there is an independent variable (‘the cause’) and a dependent variable (‘the effect’)
+
 Here's an example:
 
 Let's say you're investigating the relationship between studying hours and exam scores. You might observe a positive correlation – students who study more tend to get higher scores. However, this correlation doesn't necessarily mean that studying more causes higher scores. There could be other factors at play, such as natural aptitude or motivation.
