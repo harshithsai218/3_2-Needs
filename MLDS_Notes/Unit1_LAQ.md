@@ -4,47 +4,65 @@ In machine learning, vectors are fundamental data structures used to represent d
 
 **Example:**
 A vector $v$ with three elements can be written as:
-$$v = (v_1, v_2, v_3)$$
+```math
+v = (v_1, v_2, v_3)
+```
 or in column form:
-$$v = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$
+```math
+v = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}
+```
 
 ## Operations on Vectors
 
 1. **Vector Addition:**
    - Adding two vectors of the same length results in a new vector where each element is the sum of the corresponding elements of the input vectors.
    - **Example:**
-     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
-     $$c = a + b = \begin{pmatrix} 1+4 \\ 2+5 \\ 3+6 \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \\ 9 \end{pmatrix}$$
+  
+$$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+
+
+$$c = a + b = \begin{pmatrix} 1+4 \\ 2+5 \\ 3+6 \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \\ 9 \end{pmatrix}$$
 
 2. **Vector Subtraction:**
    - Subtracting one vector from another of the same length results in a new vector where each element is the difference of the corresponding elements.
    - **Example:**
-     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
-     $$c = a - b = \begin{pmatrix} 1-4 \\ 2-5 \\ 3-6 \end{pmatrix} = \begin{pmatrix} -3 \\ -3 \\ -3 \end{pmatrix}$$
+
+$$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+
+
+$$c = a - b = \begin{pmatrix} 1-4 \\ 2-5 \\ 3-6 \end{pmatrix} = \begin{pmatrix} -3 \\ -3 \\ -3 \end{pmatrix}$$
 
 3. **Element-wise Multiplication:**
    - Multiplying two vectors element-wise results in a new vector where each element is the product of the corresponding elements.
    - **Example:**
-     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
-     $$c = a \times b = \begin{pmatrix} 1 \times 4 \\ 2 \times 5 \\ 3 \times 6 \end{pmatrix} = \begin{pmatrix} 4 \\ 10 \\ 18 \end{pmatrix}$$
+
+$$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+
+$$c = a \times b = \begin{pmatrix} 1 \times 4 \\ 2 \times 5 \\ 3 \times 6 \end{pmatrix} = \begin{pmatrix} 4 \\ 10 \\ 18 \end{pmatrix}$$
 
 4. **Element-wise Division:**
    - Dividing one vector by another element-wise results in a new vector where each element is the quotient of the corresponding elements.
    - **Example:**
-     $$a = \begin{pmatrix} 4 \\ 9 \\ 16 \end{pmatrix}, \quad b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
-     $$c = a \div b = \begin{pmatrix} 4 \div 2 \\ 9 \div 3 \\ 16 \div 4 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
+
+$$a = \begin{pmatrix} 4 \\ 9 \\ 16 \end{pmatrix}, \quad b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
+
+$$c = a \div b = \begin{pmatrix} 4 \div 2 \\ 9 \div 3 \\ 16 \div 4 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$$
 
 5. **Dot Product:**
    - The dot product of two vectors is a scalar value obtained by multiplying corresponding elements and summing the results.
    - **Example:**
-     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
-     $$a \cdot b = 1 \times 4 + 2 \times 5 + 3 \times 6 = 4 + 10 + 18 = 32$$
+
+$$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$$
+
+$$a \cdot b = 1 \times 4 + 2 \times 5 + 3 \times 6 = 4 + 10 + 18 = 32$$
 
 6. **Norm (Magnitude) of a Vector:**
    - The norm of a vector is a measure of its length. The Euclidean norm is the most common and is calculated as the square root of the sum of the squares of its elements.
    - **Example:**
-     $$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$$
-     $$\|a\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}$$
+
+$$a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$$
+
+$$\|a\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}$$
 
 
 # Central Limit Theorem (CLT)
@@ -471,6 +489,7 @@ Matrices are fundamental mathematical structures used in various fields such as 
 A matrix is a rectangular array of numbers arranged in rows and columns. It is denoted by a capital letter (e.g., A, B, C) and its elements are typically denoted by lowercase letters with two subscripts indicating their row and column positions (e.g., \(a_{ij}\) represents the element in the i-th row and j-th column of matrix A).
 
 **Example**:
+
 $$ 
 A = \begin{pmatrix}
 a_{11} & a_{12} & a_{13} \\
@@ -495,6 +514,7 @@ $$
 Two matrices can be added if and only if they have the same dimensions. The sum is obtained by adding corresponding elements.
 
 **Example**:
+
 $$
 A = \begin{pmatrix}
 1 & 2 & 3 \\
@@ -521,6 +541,7 @@ $$
 Matrix subtraction follows the same element-wise process as matrix addition, but instead of adding, the corresponding elements are subtracted.
 
 **Example**:
+
 $$
 A - B = \begin{pmatrix}
 1-7 & 2-8 & 3-9 \\
@@ -536,6 +557,7 @@ $$
 Scalar multiplication involves multiplying each element of a matrix by a scalar (a single number).
 
 **Example**:
+
 $$
 k = 2, \quad A = \begin{pmatrix}
 1 & 2 & 3 \\
@@ -558,6 +580,7 @@ $$
 Matrix multiplication is more complex. Two matrices can be multiplied if the number of columns in the first matrix equals the number of rows in the second matrix. The resulting matrix has the dimensions of the number of rows of the first matrix by the number of columns of the second matrix.
 
 **Example**:
+
 $$
 A = \begin{pmatrix}
 1 & 2 \\
@@ -571,19 +594,21 @@ $$
 
 $$
 AB = \begin{pmatrix}
-(1*5 + 2*7) & (1*6 + 2*8) \\
-(3*5 + 4*7) & (3*6 + 4*8)
+(1 \cdot 5 + 2 \cdot 7) & (1 \cdot 6 + 2 \cdot 8) \\
+(3 \cdot 5 + 4 \cdot 7) & (3 \cdot 6 + 4 \cdot 8)
 \end{pmatrix} = \begin{pmatrix}
 19 & 22 \\
 43 & 50
 \end{pmatrix}
 $$
 
+
 #### 5. Transpose of a Matrix
 
 The transpose of a matrix is obtained by swapping rows with columns.
 
 **Example**:
+
 $$
 A = \begin{pmatrix}
 1 & 2 & 3 \\
@@ -605,6 +630,7 @@ The determinant is a scalar value that can be computed from the elements of a sq
 
 **Example**:
 For a 2x2 matrix:
+
 $$
 A = \begin{pmatrix}
 a & b \\
@@ -618,16 +644,18 @@ $$
 
 #### 7. Inverse of a Matrix
 
-The inverse of a square matrix \(A\) is denoted by \(A^{-1}\) and satisfies the equation \(AA^{-1} = A^{-1}A = I\), where \(I\) is the identity matrix. A matrix has an inverse if and only if its determinant is non-zero.
+The inverse of a square matrix $A$ is denoted by $A^{-1}$ and satisfies the equation $AA^{-1} = A^{-1}A = I$, where $I$ is the identity matrix. A matrix has an inverse if and only if its determinant is non-zero.
 
 **Example**:
 For a 2x2 matrix:
+
 $$
 A = \begin{pmatrix}
 a & b \\
 c & d
 \end{pmatrix}
 $$
+
 
 $$
 A^{-1} = \frac{1}{ad - bc} \begin{pmatrix}
